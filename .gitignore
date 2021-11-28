@@ -1,0 +1,4 @@
+/target
+
+# don't really need a lockfile for advent of code
+Cargo.lock
