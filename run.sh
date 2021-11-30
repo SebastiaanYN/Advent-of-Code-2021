@@ -11,9 +11,18 @@ fi
 
 [ ! -d "$dir" ] && mkdir -p "$dir"
 
-[ ! -f "$dir/main.rs" ] && echo "fn main() {
-    println!(\"Day $day\");
-}" > "$dir/main.rs"
+[ ! -f "$dir/main.rs" ] && echo "use std::fmt::Debug;
+
+fn main() {
+    let input = include_str!(\"./input.txt\").trim_end();
+
+    println!(\"{:?}\", part_1(input));
+    println!(\"{:?}\", part_2(input));
+}
+
+fn part_1(input: &str) -> impl Debug {}
+
+fn part_2(input: &str) -> impl Debug {}" > "$dir/main.rs"
 
 [ ! -f "$dir/input.txt" ] && curl \
     --cookie "session=$AOC_SESSION" \
