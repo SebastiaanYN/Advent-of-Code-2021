@@ -11,7 +11,9 @@ fi
 
 [ ! -d "$dir" ] && mkdir -p "$dir"
 
-[ ! -f "$dir/main.rs" ] && echo "use std::fmt::Debug;
+[ ! -f "$dir/main.rs" ] && echo "#[allow(unused_imports)]
+use advent_of_code_2021::*;
+use std::fmt::Debug;
 
 fn main() {
     let input = include_str!(\"./input.txt\").trim_end();
